@@ -1,43 +1,36 @@
 # Pet Health 🐾
 
-**Status do Projeto:** Em Desenvolvimento 🚧
+*Um diário de saúde digital para pets, inspirado por quem cuida com o coração.*
 
-## 🎯 Objetivo
+---
 
-**Pet Health** é um aplicativo móvel multiplataforma (iOS e Android) desenvolvido para permitir que donos de pets cadastrem seus animais e mantenham um registro simplificado de informações vitais, funcionando como uma agenda de saúde digital de fácil acesso.
+### ❤️ Motivação 
 
-## ✨ Funcionalidades Principais
+ A aplicação foi concebida como uma ferramenta para celebrar o amor e o cuidado que dedicamos aos nossos animais, transformando o registo de saúde numa coleção de memórias preciosas.
 
-O aplicativo foi construído para ser simples, intuitivo e funcional, focando nas seguintes características:
+O design **"Toque Dourado"** foi diretamente inspirado por uma arte com um grande valor sentimental, procurando capturar a sua paleta de cores quentes e a sensação de um álbum de recordações.
 
-* **🏠 Tela Principal (Home):** Uma tela de boas-vindas amigável que apresenta o aplicativo e oferece navegação clara para as seções principais: "Ver Meus Pets" e "Cadastrar Novo Pet".
+### ✨ Sobre o Projeto
 
-* **📝 Formulário de Cadastro Interativo:**
-    * Campos para **Nome**, **Espécie** e **Data de Nascimento**.
-    * **Validação de dados** para garantir que informações essenciais não sejam deixadas em branco.
-    * **Feedback instantâneo** para o usuário, com mensagens de erro ou sucesso.
+**Pet Health** é uma aplicação móvel multiplataforma (iOS, Android e Web) que permite aos donos de animais de estimação registar e acompanhar facilmente as informações vitais dos seus companheiros. Funciona como uma agenda de saúde digital, onde cada pet tem o seu espaço especial.
 
-* **📜 Lista Dinâmica de Pets:**
-    * Exibição de todos os pets cadastrados em formato de "cards", utilizando `FlatList` para otimização.
-    * Permite **adicionar** e **remover** pets da lista, com atualização da interface em tempo real.
+### 🎨 Funcionalidades
 
-* **🎨 Design Responsivo e Moderno:**
-    * Interface adaptável que funciona bem em diferentes tamanhos de tela, de celulares a tablets.
-    * Estilização organizada com `StyleSheet`, uma paleta de cores consistente e tipografia amigável (fonte Poppins).
+* **🏠 Tela Inicial Acolhedora:** Uma introdução calorosa que reflete a inspiração do projeto.
+* **📝 Registo de Pets Simplificado:** Um formulário intuitivo para adicionar novos pets com nome, espécie, data de nascimento e uma foto.
+* **🖼️ Galeria de "Amores":** Uma lista visual dos seus pets em formato de grelha, com as fotos apresentadas como Polaroids e os nomes escritos numa fonte que imita a escrita à mão.
+* **✍️ Fontes Personalizadas:** Uma combinação de fontes elegantes e manuscritas para criar uma atmosfera única e pessoal.
+* **📱 Design Responsivo:** Uma interface que se adapta perfeitamente a diferentes tamanhos de ecrã.
 
-## 🛠️ Tecnologias Utilizadas
+### 🛠️ Tecnologias Utilizadas
 
-Este projeto foi construído com as seguintes tecnologias e bibliotecas:
+* **React Native**: Framework para desenvolvimento de aplicações móveis nativas.
+* **Expo (SDK 51)**: Plataforma e conjunto de ferramentas para facilitar o desenvolvimento.
+* **Expo Router**: Sistema de roteamento e navegação baseado em ficheiros.
+* **TypeScript**: Para um código mais robusto e seguro.
+* **React Context API**: Para o gerenciamento do estado global dos pets.
 
-* [**React Native**](https://reactnative.dev/): Framework para desenvolvimento de aplicativos móveis nativos.
-* [**Expo**](https://expo.dev/): Plataforma e conjunto de ferramentas para facilitar o desenvolvimento e build de apps React Native.
-* [**Expo Router**](https://docs.expo.dev/router/introduction/): Sistema de roteamento e navegação baseado em arquivos.
-* [**TypeScript**](https://www.typescriptlang.org/): Superset do JavaScript que adiciona tipagem estática ao código.
-* **React Context API**: Para gerenciamento de estado global de forma limpa e eficiente.
-
-## 🚀 Como Rodar o Projeto
-
-Para executar este projeto localmente, siga os passos abaixo:
+### 🚀 Como Rodar o Projeto
 
 1.  **Clone o repositório:**
     ```bash
@@ -52,13 +45,13 @@ Para executar este projeto localmente, siga os passos abaixo:
 
 3.  **Inicie o servidor de desenvolvimento:**
     ```bash
-    npx expo start
+    npx expo start -c
     ```
 
-4.  **Execute o aplicativo:**
+4.  **Execute a aplicação:**
     * Pressione `w` no terminal para abrir a versão **web**.
-    * Escaneie o QR Code com o aplicativo **Expo Go** (disponível para [Android](https://play.google.com/store/apps/details?id=host.exp.exponent) e [iOS](https://apps.apple.com/us/app/expo-go/id982107779)) para rodar no seu celular.
+    * Escaneie o QR Code com a aplicação **Expo Go** para a versão mobile.
 
 ---
 
-Feito por Leticia Rodrigues
+Feito com ❤️ por **Leticia Rodrigues**
