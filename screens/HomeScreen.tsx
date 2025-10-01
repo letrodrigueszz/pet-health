@@ -11,15 +11,15 @@ export default function HomeScreen() {
     <SafeAreaView style={globalStyles.container}>
       <View style={globalStyles.centerContainer}>
         
-        <FontAwesome5 name="heart" size={80} color={colors.primary} style={{ marginBottom: 20 }} solid />
+        <FontAwesome5 name="heart" size={80} color={colors.red} style={{ marginBottom: 20, marginTop:20 }} solid />
 
-        <Text style={globalStyles.title}>Pet Health</Text>
+        {/* <Text style={globalStyles.title}>Pet Health</Text> */}
         <Text style={globalStyles.subtitle}>Inspirado por quem cuida com o coração.</Text>
-        <Text style={globalStyles.handwritten}>"you're so golden"</Text>
+        <Text style={globalStyles.handwritten}>"Você é tão especial!"</Text>
 
-        <View style={{ width: '100%', marginTop: 50 }}>
+        <View style={{ width: '30%', marginTop: 50 }}>
           <TouchableOpacity style={globalStyles.button} onPress={() => router.push('/list')}>
-            <Text style={globalStyles.buttonText}>Ver Meus Amores</Text>
+            <Text style={globalStyles.buttonText2}>Ver Meus Amores</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             style={[globalStyles.button, { backgroundColor: colors.accent }]} 

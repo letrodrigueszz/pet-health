@@ -10,6 +10,7 @@ export const colors = {
   card: '#FFFFFF',
   error: '#EF4444',
   shadow: '#A7A7A7',
+  red:'#ff0000'
 };
 
 export const globalStyles = StyleSheet.create({
@@ -38,7 +39,7 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 10,
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: 25,
     fontFamily: 'Nunito-Regular',
     color: colors.textSecondary,
     textAlign: 'center',
@@ -46,8 +47,9 @@ export const globalStyles = StyleSheet.create({
   },
   handwritten: {
     fontFamily: 'Caveat-Bold',
-    fontSize: 28,
+    fontSize: 32,
     color: colors.accent,
+    marginVertical:1
   },
 
   // --- Botões ---
@@ -62,11 +64,21 @@ export const globalStyles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 5,
     elevation: 6,
+    marginBottom:11,
   },
   buttonText: {
     color: colors.card,
-    fontSize: 16,
+    fontSize: 20,
     fontFamily: 'Nunito-Bold',
+    marginBottom:1,
+    fontWeight:'bold',
+  },
+  buttonText2: {
+    color: colors.textSecondary,
+    fontSize: 20,
+    fontFamily: 'Nunito-Bold',
+    fontWeight:'bold',
+    marginBottom:1,
   },
   
   // --- Floating Action Button (FAB) ---
