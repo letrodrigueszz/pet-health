@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, ReactNode, useContext, useState } from "react";
 
 // 1. Definimos o "formato" de um Pet
 interface Pet {
@@ -6,12 +6,13 @@ interface Pet {
   nome: string;
   especie: string;
   dataNasc?: string; // O '?' torna a data de nascimento opcional
+  imageUrl?: string;
 }
 
 // 2. Definimos o "formato" dos dados que o nosso Contexto vai ter
 interface PetContextData {
   pets: Pet[];
-  addPet: (pet: Omit<Pet, 'id'>) => void;
+  addPet: (pet: Omit<Pet, "id">) => void;
   deletePet: (petId: string) => void;
 }
 
@@ -21,16 +22,16 @@ const PetContext = createContext<PetContextData>({} as PetContextData);
 // O resto do arquivo continua como estava, mas agora com os tipos corretos
 export const PetProvider = ({ children }: { children: ReactNode }) => {
   const [pets, setPets] = useState<Pet[]>([
-    { id: '1', nome: 'Bolinha', especie: 'Cachorro', dataNasc: '01/01/2020' },
-    { id: '2', nome: 'Frajola', especie: 'Gato', dataNasc: '05/03/2022' },
+    { id: "1", nome: "Bolinha", especie: "Cachorro", dataNasc: "01/01/2020" },
+    { id: "2", nome: "Frajola", especie: "Gato", dataNasc: "05/03/2022" },
   ]);
 
-  const addPet = (pet: Omit<Pet, 'id'>) => {
-    setPets(prevPets => [...prevPets, { id: Date.now().toString(), ...pet }]);
+  const addPet = (pet: Omit<Pet, "id">) => {
+    setPets((prevPets) => [...prevPets, { id: Date.now().toString(), ...pet }]);
   };
 
   const deletePet = (petId: string) => {
-    setPets(prevPets => prevPets.filter(pet => pet.id !== petId));
+    setPets((prevPets) => prevPets.filter((pet) => pet.id !== petId));
   };
 
   return (
