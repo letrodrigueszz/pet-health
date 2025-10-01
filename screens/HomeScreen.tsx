@@ -1,4 +1,3 @@
-import { FontAwesome5 } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import React from "react";
 import {
@@ -19,14 +18,7 @@ export default function HomeScreen() {
         {/* <Text style={globalStyles.title}>Pet Health</Text> */}
         <Text style={globalStyles.subtitle}>
           <p></p>
-          Inspirado por quem cuida com o coração{" "}
-          <FontAwesome5
-            name="heart"
-            size={32}
-            color="red" // 👈 deixa o coração vermelho
-            solid
-          />
-          .
+          Inspirado por quem cuida com o coração.
         </Text>
 
         <Image
@@ -36,10 +28,10 @@ export default function HomeScreen() {
             height: 50,
             borderRadius: 10,
             marginBottom: "auto",
-            marginTop:4
+            marginTop: 4,
           }}
         ></Image>
-        <Text style={globalStyles.handwritten}>"Você é tão especial!"</Text>
+        <Text style={globalStyles.handwritten}>"You are so golden"</Text>
 
         <View style={{ width: "50%", marginTop: "auto" }}>
           <TouchableOpacity
