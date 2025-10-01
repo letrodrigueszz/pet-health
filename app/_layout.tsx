@@ -30,6 +30,7 @@ export default function RootLayout() {
         screenOptions={{
           headerStyle: {
             backgroundColor: "#D97706", // Laranja escuro
+            
           },
           headerTintColor: "#FFFBEB", // Creme
           headerTitleAlign: "center",
@@ -46,6 +47,8 @@ export default function RootLayout() {
             headerTitleStyle: {
               fontSize: 35,
               fontFamily: 'Lora-Bold',
+              
+              
             },
           }}
         />

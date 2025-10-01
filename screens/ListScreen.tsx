@@ -10,8 +10,16 @@ const PetCard = ({ pet }) => (
   <View style={styles.cardContainer}>
     <TouchableOpacity onLongPress={() => alert(`Espécie: ${pet.especie}`)} style={styles.polaroid}>
       <Image 
-        source={{ uri: pet.imageUrl || 'https://placehold.co/200x200/FBBF24/78350F?text=🐾' }} 
-        style={styles.petImage} 
+        source={require('..//assets//images/icon2.png')}
+          style={{
+            width: 100,
+            height: 100,
+            borderRadius: 10,
+            marginBottom: "auto",
+            justifyContent:'center',
+            alignItems:'center'
+          }}
+        
       />
     </TouchableOpacity>
     <Text style={globalStyles.petNameHandwritten}>{pet.nome}</Text>

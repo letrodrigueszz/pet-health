@@ -16,14 +16,17 @@ export const colors = {
 export const globalStyles = StyleSheet.create({
   // --- Containers ---
   container: {
-    flex: 1,
+    flex:1,
     backgroundColor: colors.background,
+    height:'auto',
+    width:'auto'
   },
   centerContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 30,
+    margin:'auto'
   },
   formContainer: {
     flex: 1,
@@ -43,7 +46,8 @@ export const globalStyles = StyleSheet.create({
     fontFamily: 'Nunito-Regular',
     color: colors.textSecondary,
     textAlign: 'center',
-    marginBottom: 40,
+    
+    marginTop:'auto',
   },
   handwritten: {
     fontFamily: 'Caveat-Bold',
@@ -58,19 +62,19 @@ export const globalStyles = StyleSheet.create({
     paddingVertical: 16,
     borderRadius: 99, // Totalmente arredondado
     alignItems: 'center',
-    marginVertical: 8,
+    marginVertical: 10,
     shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 5,
     elevation: 6,
-    marginBottom:11,
+    marginBottom:5,
   },
   buttonText: {
     color: colors.card,
     fontSize: 20,
     fontFamily: 'Nunito-Bold',
-    marginBottom:1,
+    margin:'auto',
     fontWeight:'bold',
   },
   buttonText2: {

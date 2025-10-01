@@ -41,7 +41,7 @@ export default function FormScreen() {
                 value={nome} 
                 onChangeText={setNome} 
                 placeholder="Como se chama o seu amor?" 
-                placeholderTextColor="#BCA18E"
+                placeholderTextColor="#e84f30ff"
               />
               
                <Text style={globalStyles.label}>URL da Foto</Text>
@@ -50,7 +50,7 @@ export default function FormScreen() {
                 value={imageUrl} 
                 onChangeText={setImageUrl} 
                 placeholder="Cole aqui o link da foto" 
-                placeholderTextColor="#BCA18E"
+                placeholderTextColor="#e84f30ff"
               />
 
               <Text style={globalStyles.label}>Espécie</Text>
@@ -59,7 +59,7 @@ export default function FormScreen() {
                 value={especie} 
                 onChangeText={setEspecie} 
                 placeholder="Ex: Cão, Gato..." 
-                placeholderTextColor="#BCA18E"
+                placeholderTextColor="#e84f30ff"
               />
 
               <Text style={globalStyles.label}>Data de Nascimento (opcional)</Text>
@@ -68,7 +68,7 @@ export default function FormScreen() {
                 value={dataNasc} 
                 onChangeText={setDataNasc} 
                 placeholder="DD/MM/AAAA" 
-                placeholderTextColor="#BCA18E"
+                placeholderTextColor="#e84f30ff"
               />
             </View>
 

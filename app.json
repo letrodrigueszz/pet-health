@@ -4,7 +4,7 @@
     "slug": "pet-health-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/icon2.png",
     "scheme": "pethealth",
     "userInterfaceStyle": "automatic",
     "assetBundlePatterns": [
@@ -21,7 +21,7 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/icon2.png"
     },
     "plugins": [
       "expo-router",
