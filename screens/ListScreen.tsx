@@ -10,11 +10,16 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { usePets } from "../context/PetContext";
+import { Pet, usePets } from "../context/PetContext";
 import { colors, globalStyles } from "../styles/globalStyles";
 
-// Card no estilo Polaroid
-const PetCard = ({ pet }) => (
+// ✅ ADICIONE ESTA INTERFACE E USE-A NO COMPONENTE
+interface PetCardProps {
+  pet: Pet;
+}
+
+// ✅ AGORA DEFINA O TIPO DO PARÂMETRO
+const PetCard = ({ pet }: PetCardProps) => (
   <View style={styles.cardContainer}>
     <TouchableOpacity
       onLongPress={() => alert(`Espécie: ${pet.especie}`)}

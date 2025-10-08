@@ -1,7 +1,7 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
 
 // 1. Definimos o "formato" de um Pet
-interface Pet {
+export interface Pet {
   id: string;
   nome: string;
   especie: string;
@@ -47,4 +47,4 @@ export const usePets = () => {
 };
 // ... seu código atual
 
-export type { Pet }; // exportando a interface
+
