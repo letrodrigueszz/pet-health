@@ -1,12 +1,7 @@
 import { useRouter } from "expo-router";
 import React from "react";
-import {
-  Image,
-  SafeAreaView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { colors, globalStyles } from "../styles/globalStyles";
 
 export default function HomeScreen() {
@@ -17,7 +12,6 @@ export default function HomeScreen() {
       <View style={globalStyles.centerContainer}>
         {/* <Text style={globalStyles.title}>Pet Health</Text> */}
         <Text style={globalStyles.subtitle}>
-          <p></p>
           Inspirado por quem cuida com o coração.
         </Text>
 

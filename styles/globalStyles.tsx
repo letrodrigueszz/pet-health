@@ -1,4 +1,8 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
+const isSmallDevice = width < 375; // iPhone SE e similares
+const isMediumDevice = width < 414; // iPhone 8 e similares
 
 // A paleta de cores do design "Toque Dourado"
 export const colors = {
@@ -10,133 +14,229 @@ export const colors = {
   card: '#FFFFFF',
   error: '#EF4444',
   shadow: '#A7A7A7',
-  red:'#ff0000'
+  red: '#ff0000'
+};
+
+// Funções auxiliares para responsividade
+const scaleSize = (size: number) => {
+  const scaleFactor = isSmallDevice ? 0.85 : isMediumDevice ? 0.92 : 1;
+  return size * scaleFactor;
+};
+
+const scaleFont = (size: number) => {
+  const scaleFactor = isSmallDevice ? 0.9 : isMediumDevice ? 0.95 : 1;
+  return size * scaleFactor;
 };
 
 export const globalStyles = StyleSheet.create({
   // --- Containers ---
   container: {
-    flex:1,
+    flex: 1,
     backgroundColor: colors.background,
-    height:'auto',
-    width:'auto'
   },
   centerContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 30,
-    margin:'auto'
+    paddingHorizontal: scaleSize(20),
+    paddingVertical: scaleSize(30),
   },
   formContainer: {
     flex: 1,
-    padding: 20,
+    paddingHorizontal: scaleSize(16),
+    paddingVertical: scaleSize(20),
   },
 
   // --- Textos ---
   title: {
-    fontSize: 40,
+    fontSize: scaleFont(40),
     fontFamily: 'Lora-Bold',
     color: colors.text,
     textAlign: 'center',
-    marginBottom: 10,
+    marginBottom: scaleSize(8),
+    lineHeight: scaleFont(44),
   },
   subtitle: {
-    fontSize: 25,
+    fontSize: scaleFont(25),
     fontFamily: 'Nunito-Regular',
     color: colors.textSecondary,
     textAlign: 'center',
-    
-    marginTop:'auto',
+    marginTop: 'auto',
+    lineHeight: scaleFont(30),
   },
   handwritten: {
     fontFamily: 'Caveat-Bold',
-    fontSize: 32,
+    fontSize: scaleFont(32),
     color: colors.accent,
-    marginVertical:1
+    marginVertical: scaleSize(1),
+    lineHeight: scaleFont(36),
   },
 
   // --- Botões ---
   button: {
     backgroundColor: colors.primary,
-    paddingVertical: 16,
-    borderRadius: 99, // Totalmente arredondado
+    paddingVertical: scaleSize(14),
+    paddingHorizontal: scaleSize(20),
+    borderRadius: 99,
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: scaleSize(8),
     shadowColor: colors.shadow,
-    shadowOffset: { width: 0, height: 4 },
+    shadowOffset: { width: 0, height: scaleSize(4) },
     shadowOpacity: 0.3,
-    shadowRadius: 5,
+    shadowRadius: scaleSize(5),
     elevation: 6,
-    marginBottom:5,
+    minHeight: scaleSize(50),
+    justifyContent: 'center',
   },
   buttonText: {
     color: colors.card,
-    fontSize: 20,
+    fontSize: scaleFont(18),
     fontFamily: 'Nunito-Bold',
-    margin:'auto',
-    fontWeight:'bold',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    includeFontPadding: false,
   },
   buttonText2: {
     color: colors.textSecondary,
-    fontSize: 20,
+    fontSize: scaleFont(18),
     fontFamily: 'Nunito-Bold',
-    fontWeight:'bold',
-    marginBottom:1,
+    fontWeight: 'bold',
+    marginBottom: scaleSize(1),
+    textAlign: 'center',
   },
   
   // --- Floating Action Button (FAB) ---
   fab: {
     position: 'absolute',
-    bottom: 30,
-    right: 30,
-    width: 64,
-    height: 64,
-    borderRadius: 32,
+    bottom: scaleSize(20),
+    right: scaleSize(20),
+    width: scaleSize(56),
+    height: scaleSize(56),
+    borderRadius: scaleSize(28),
     backgroundColor: colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: colors.shadow,
-    shadowOffset: { width: 0, height: 6 },
+    shadowOffset: { width: 0, height: scaleSize(4) },
     shadowOpacity: 0.4,
-    shadowRadius: 6,
-    elevation: 10,
+    shadowRadius: scaleSize(6),
+    elevation: 8,
   },
 
   // --- Formulário ---
   label: {
-    fontSize: 16,
+    fontSize: scaleFont(15),
     fontFamily: 'Nunito-Bold',
     color: colors.textSecondary,
-    marginBottom: 8,
+    marginBottom: scaleSize(6),
+    lineHeight: scaleFont(20),
   },
   input: {
     backgroundColor: colors.card,
-    paddingHorizontal: 16,
-    paddingVertical: 14,
-    borderRadius: 12,
-    fontSize: 16,
+    paddingHorizontal: scaleSize(14),
+    paddingVertical: scaleSize(12),
+    borderRadius: scaleSize(10),
+    fontSize: scaleFont(16),
     fontFamily: 'Nunito-Regular',
-    marginBottom: 20,
+    marginBottom: scaleSize(16),
     borderWidth: 1,
-    borderColor: '#FDE68A', // Borda amarela clara
+    borderColor: '#FDE68A',
+    minHeight: scaleSize(48),
   },
   errorText: {
     color: colors.error,
     fontFamily: 'Nunito-Regular',
-    marginBottom: 15,
+    fontSize: scaleFont(14),
+    marginBottom: scaleSize(12),
     textAlign: 'center',
+    lineHeight: scaleFont(18),
   },
 
   // --- Lista e Cards ---
   listContainer: {
-    paddingHorizontal: 8,
+    paddingHorizontal: scaleSize(6),
   },
   petNameHandwritten: {
     fontFamily: 'Caveat-Bold',
-    fontSize: 26,
+    fontSize: scaleFont(24),
     textAlign: 'center',
     color: colors.text,
-    marginTop: 8,
+    marginTop: scaleSize(6),
+    lineHeight: scaleFont(28),
+  },
+
+  // --- Novos estilos para melhor responsividade ---
+  safeArea: {
+    flex: 1,
+    backgroundColor: colors.background,
+  },
+  scrollContainer: {
+    flexGrow: 1,
+    paddingBottom: scaleSize(20),
+  },
+  card: {
+    backgroundColor: colors.card,
+    borderRadius: scaleSize(12),
+    padding: scaleSize(16),
+    marginVertical: scaleSize(6),
+    marginHorizontal: scaleSize(8),
+    shadowColor: colors.shadow,
+    shadowOffset: { width: 0, height: scaleSize(2) },
+    shadowOpacity: 0.1,
+    shadowRadius: scaleSize(3),
+    elevation: 3,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+  },
+  spaceBetween: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  smallText: {
+    fontSize: scaleFont(12),
+    fontFamily: 'Nunito-Regular',
+    color: colors.textSecondary,
+  },
+  mediumText: {
+    fontSize: scaleFont(16),
+    fontFamily: 'Nunito-Regular',
+    color: colors.text,
+    lineHeight: scaleFont(20),
   },
 });
+
+// Estilos específicos para dispositivos pequenos
+export const smallDeviceStyles = {
+  // Overrides para dispositivos muito pequenos
+  extraSmallPadding: {
+    paddingHorizontal: scaleSize(12),
+  },
+  compactButton: {
+    paddingVertical: scaleSize(10),
+    minHeight: scaleSize(44),
+  },
+  smallTitle: {
+    fontSize: scaleFont(32),
+    lineHeight: scaleFont(36),
+  },
+  smallSubtitle: {
+    fontSize: scaleFont(20),
+    lineHeight: scaleFont(24),
+  },
+};
+
+// Hook personalizado para responsividade (se estiver usando React Native com hooks)
+export const useResponsiveStyles = () => {
+  return {
+    scaleSize,
+    scaleFont,
+    isSmallDevice,
+    isMediumDevice,
+    windowWidth: width,
+    windowHeight: height,
+  };
+};
