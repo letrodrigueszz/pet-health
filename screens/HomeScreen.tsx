@@ -16,7 +16,7 @@ export default function HomeScreen() {
         </Text>
 
         <Image
-          source={require("assets/icon.png")}
+          source={require("../assets/icon.png")}
           style={{
             width: 100,
             height: 50,

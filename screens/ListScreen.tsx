@@ -1,25 +1,35 @@
-import { FontAwesome5 } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
-import React from 'react';
-import { FlatList, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { usePets } from '../context/PetContext';
-import { colors, globalStyles } from '../styles/globalStyles';
+import { FontAwesome5 } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
+import React from "react";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { usePets } from "../context/PetContext";
+import { colors, globalStyles } from "../styles/globalStyles";
 
 // Card no estilo Polaroid
 const PetCard = ({ pet }) => (
   <View style={styles.cardContainer}>
-    <TouchableOpacity onLongPress={() => alert(`Espécie: ${pet.especie}`)} style={styles.polaroid}>
-      <Image 
-        source={require('..//assets//images/icon2.png')}
-          style={{
-            width: 100,
-            height: 100,
-            borderRadius: 10,
-            marginBottom: "auto",
-            justifyContent:'center',
-            alignItems:'center'
-          }}
-        
+    <TouchableOpacity
+      onLongPress={() => alert(`Espécie: ${pet.especie}`)}
+      style={styles.polaroid}
+    >
+      <Image
+        source={require("../assets/icon.png")}
+        style={{
+          width: 100,
+          height: 100,
+          borderRadius: 10,
+          marginBottom: "auto",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       />
     </TouchableOpacity>
     <Text style={globalStyles.petNameHandwritten}>{pet.nome}</Text>
