@@ -45,3 +45,6 @@ export const PetProvider = ({ children }: { children: ReactNode }) => {
 export const usePets = () => {
   return useContext(PetContext);
 };
+// ... seu código atual
+
+export type { Pet }; // exportando a interface

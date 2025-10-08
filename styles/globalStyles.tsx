@@ -1,20 +1,20 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { Dimensions, StyleSheet } from "react-native";
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 const isSmallDevice = width < 375; // iPhone SE e similares
 const isMediumDevice = width < 414; // iPhone 8 e similares
 
 // A paleta de cores do design "Toque Dourado"
 export const colors = {
-  background: '#FFFBEB', // Creme
-  primary: '#FBBF24',    // Amarelo dourado
-  accent: '#D97706',     // Laranja escuro
-  text: '#78350F',       // Castanho escuro
-  textSecondary: '#92400E',
-  card: '#FFFFFF',
-  error: '#EF4444',
-  shadow: '#A7A7A7',
-  red: '#ff0000'
+  background: "#FFFBEB", // Creme
+  primary: "#FBBF24", // Amarelo dourado
+  accent: "#D97706", // Laranja escuro
+  text: "#78350F", // Castanho escuro
+  textSecondary: "#92400E",
+  card: "#FFFFFF",
+  error: "#EF4444",
+  shadow: "#A7A7A7",
+  red: "#ff0000",
 };
 
 // Funções auxiliares para responsividade
@@ -36,8 +36,8 @@ export const globalStyles = StyleSheet.create({
   },
   centerContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: scaleSize(20),
     paddingVertical: scaleSize(30),
   },
@@ -49,23 +49,24 @@ export const globalStyles = StyleSheet.create({
 
   // --- Textos ---
   title: {
+    marginTop: 2,
     fontSize: scaleFont(40),
-    fontFamily: 'Lora-Bold',
+    fontFamily: "Lora-Bold",
     color: colors.text,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: scaleSize(8),
     lineHeight: scaleFont(44),
   },
   subtitle: {
     fontSize: scaleFont(25),
-    fontFamily: 'Nunito-Regular',
+    fontFamily: "Nunito-Regular",
     color: colors.textSecondary,
-    textAlign: 'center',
-    marginTop: 'auto',
+    textAlign: "center",
+    marginTop: "auto",
     lineHeight: scaleFont(30),
   },
   handwritten: {
-    fontFamily: 'Caveat-Bold',
+    fontFamily: "Caveat-Bold",
     fontSize: scaleFont(32),
     color: colors.accent,
     marginVertical: scaleSize(1),
@@ -78,7 +79,7 @@ export const globalStyles = StyleSheet.create({
     paddingVertical: scaleSize(14),
     paddingHorizontal: scaleSize(20),
     borderRadius: 99,
-    alignItems: 'center',
+    alignItems: "center",
     marginVertical: scaleSize(8),
     shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: scaleSize(4) },
@@ -86,36 +87,36 @@ export const globalStyles = StyleSheet.create({
     shadowRadius: scaleSize(5),
     elevation: 6,
     minHeight: scaleSize(50),
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   buttonText: {
     color: colors.card,
     fontSize: scaleFont(18),
-    fontFamily: 'Nunito-Bold',
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontFamily: "Nunito-Bold",
+    fontWeight: "bold",
+    textAlign: "center",
     includeFontPadding: false,
   },
   buttonText2: {
     color: colors.textSecondary,
     fontSize: scaleFont(18),
-    fontFamily: 'Nunito-Bold',
-    fontWeight: 'bold',
+    fontFamily: "Nunito-Bold",
+    fontWeight: "bold",
     marginBottom: scaleSize(1),
-    textAlign: 'center',
+    textAlign: "center",
   },
-  
+
   // --- Floating Action Button (FAB) ---
   fab: {
-    position: 'absolute',
+    position: "absolute",
     bottom: scaleSize(20),
     right: scaleSize(20),
     width: scaleSize(56),
     height: scaleSize(56),
     borderRadius: scaleSize(28),
     backgroundColor: colors.primary,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: scaleSize(4) },
     shadowOpacity: 0.4,
@@ -126,7 +127,7 @@ export const globalStyles = StyleSheet.create({
   // --- Formulário ---
   label: {
     fontSize: scaleFont(15),
-    fontFamily: 'Nunito-Bold',
+    fontFamily: "Nunito-Bold",
     color: colors.textSecondary,
     marginBottom: scaleSize(6),
     lineHeight: scaleFont(20),
@@ -137,18 +138,18 @@ export const globalStyles = StyleSheet.create({
     paddingVertical: scaleSize(12),
     borderRadius: scaleSize(10),
     fontSize: scaleFont(16),
-    fontFamily: 'Nunito-Regular',
+    fontFamily: "Nunito-Regular",
     marginBottom: scaleSize(16),
     borderWidth: 1,
-    borderColor: '#FDE68A',
+    borderColor: "#FDE68A",
     minHeight: scaleSize(48),
   },
   errorText: {
     color: colors.error,
-    fontFamily: 'Nunito-Regular',
+    fontFamily: "Nunito-Regular",
     fontSize: scaleFont(14),
     marginBottom: scaleSize(12),
-    textAlign: 'center',
+    textAlign: "center",
     lineHeight: scaleFont(18),
   },
 
@@ -157,9 +158,9 @@ export const globalStyles = StyleSheet.create({
     paddingHorizontal: scaleSize(6),
   },
   petNameHandwritten: {
-    fontFamily: 'Caveat-Bold',
+    fontFamily: "Caveat-Bold",
     fontSize: scaleFont(24),
-    textAlign: 'center',
+    textAlign: "center",
     color: colors.text,
     marginTop: scaleSize(6),
     lineHeight: scaleFont(28),
@@ -187,23 +188,23 @@ export const globalStyles = StyleSheet.create({
     elevation: 3,
   },
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap",
   },
   spaceBetween: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   smallText: {
     fontSize: scaleFont(12),
-    fontFamily: 'Nunito-Regular',
+    fontFamily: "Nunito-Regular",
     color: colors.textSecondary,
   },
   mediumText: {
     fontSize: scaleFont(16),
-    fontFamily: 'Nunito-Regular',
+    fontFamily: "Nunito-Regular",
     color: colors.text,
     lineHeight: scaleFont(20),
   },

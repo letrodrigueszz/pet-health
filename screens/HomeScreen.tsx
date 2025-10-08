@@ -2,7 +2,7 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors, globalStyles } from "../styles/globalStyles";
+import { globalStyles } from "../styles/globalStyles";
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -10,37 +10,39 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={globalStyles.container}>
       <View style={globalStyles.centerContainer}>
-        {/* <Text style={globalStyles.title}>Pet Health</Text> */}
-        <Text style={globalStyles.subtitle}>
-          Inspirado por quem cuida com o coração.
+        {/* Logo */}
+        <Text style={globalStyles.title}>
+          Inspirado por quem cuida com o coração
         </Text>
-
         <Image
-          source={require("assets/images/icon2.png")}
+          source={require("../assets/icon.png")} // ✅ Caminho correto
           style={{
             width: 100,
-            height: 50,
-            borderRadius: 10,
-            marginBottom: "auto",
-            marginTop: 4,
+            height: 100, // Ajustado para quadrado
+            marginBottom: 20,
           }}
-        ></Image>
-        <Text style={globalStyles.handwritten}>"You are so golden"</Text>
+          resizeMode="contain"
+        />
 
-        <View style={{ width: "50%", marginTop: "auto" }}>
-          <TouchableOpacity
-            style={globalStyles.button}
-            onPress={() => router.push("/list")}
-          >
-            <Text style={globalStyles.buttonText2}>Ver Meus Amores</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[globalStyles.button, { backgroundColor: colors.accent }]}
-            onPress={() => router.push("/add")}
-          >
-            <Text style={globalStyles.buttonText}>Adicionar Novo Pet</Text>
-          </TouchableOpacity>
-        </View>
+        <Text style={globalStyles.handwritten}>You're so golden</Text>
+
+        {/* <Text style={globalStyles.subtitle}>
+          Gerencie a saúde do seu pet de forma simples
+        </Text> */}
+
+        {/* Botão Principal */}
+        <TouchableOpacity
+          style={globalStyles.button}
+          onPress={() => router.push("/list")}
+        >
+          <Text style={globalStyles.buttonText}>Ver Meus Amores</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={globalStyles.button}
+          onPress={() => router.push("/add")}
+        >
+          <Text style={globalStyles.buttonText}>Adicionar Novo Pet</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

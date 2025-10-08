@@ -1,25 +1,41 @@
-import { FontAwesome5 } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
-import React from 'react';
-import { FlatList, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { usePets } from '../context/PetContext';
-import { colors, globalStyles } from '../styles/globalStyles';
+import { FontAwesome5 } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
+import React from "react";
+import {
+  FlatList,
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { usePets } from "../context/PetContext";
+import { colors, globalStyles } from "../styles/globalStyles";
+import { Pet } from "../context/PetContext"; // Importe a interface do contexto
 
-// Card no estilo Polaroid
-const PetCard = ({ pet }) => (
+// Defina as props do PetCard
+interface PetCardProps {
+  pet: Pet;
+}
+
+// Card no estilo Polaroid com tipagem correta
+const PetCard = ({ pet }: PetCardProps) => (
   <View style={styles.cardContainer}>
-    <TouchableOpacity onLongPress={() => alert(`Espécie: ${pet.especie}`)} style={styles.polaroid}>
-      <Image 
-        source={require('..//assets//images/icon2.png')}
-          style={{
-            width: 100,
-            height: 100,
-            borderRadius: 10,
-            marginBottom: "auto",
-            justifyContent:'center',
-            alignItems:'center'
-          }}
-        
+    <TouchableOpacity
+      onLongPress={() => alert(`Espécie: ${pet.especie}`)}
+      style={styles.polaroid}
+    >
+      <Image
+        source={require("../assets/icon.png")}
+        style={{
+          width: 100,
+          height: 100,
+          borderRadius: 10,
+          marginBottom: "auto",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       />
     </TouchableOpacity>
     <Text style={globalStyles.petNameHandwritten}>{pet.nome}</Text>
@@ -40,45 +56,45 @@ export default function ListScreen() {
         <FlatList
           data={pets}
           renderItem={({ item }) => <PetCard pet={item} />}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
           numColumns={2} // Essencial para a grelha
           contentContainerStyle={globalStyles.listContainer}
         />
       )}
 
       {/* Botão Flutuante (FAB) para Adicionar Pet */}
-      <TouchableOpacity 
-        style={globalStyles.fab} 
-        onPress={() => router.push('/add')}
+      <TouchableOpacity
+        style={globalStyles.fab}
+        onPress={() => router.push("/add")}
       >
         <FontAwesome5 name="plus" size={24} color={colors.card} />
       </TouchableOpacity>
     </SafeAreaView>
   );
-};
+}
 
 // Estilos locais para o card Polaroid
 const styles = StyleSheet.create({
   cardContainer: {
     flex: 1,
     padding: 8,
-    alignItems: 'center',
+    alignItems: "center",
   },
   polaroid: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     padding: 10,
     paddingBottom: 20,
     borderRadius: 2,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: '100%',
+    width: "100%",
   },
   petImage: {
-    width: '100%',
+    width: "100%",
     height: 150,
-    backgroundColor: '#eee',
+    backgroundColor: "#eee",
   },
 });
