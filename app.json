@@ -11,6 +11,11 @@
     "android": {
       "package": "com.teste.pethealth",
       "versionCode": 1
+    },
+    "extra": {
+      "eas": {
+        "projectId": "08fd3e77-32b2-47ab-8d90-452110196325"
+      }
     }
   }
 }
