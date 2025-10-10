@@ -11,10 +11,10 @@
     "preview": {
       "distribution": "internal",
       "android": {
-        "buildType": "apk"
+        "buildType": "apk" // MANTÉM: Força a criação de um APK para testes internos.
       },
       "env": {
-        "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
+        "NPM_CONFIG_LEGACY_PEER_DEPS": "true" // MANTÉM: Ajuda a ignorar conflitos NPM no build.
       }
     },
     "production": {
