@@ -1,7 +1,7 @@
 {
   "name": "pet-health",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "App.tsx",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -32,15 +32,17 @@
   },
   "private": true,
   "resolutions": {
-    "metro": "0.80.9",
-    "metro-resolver": "0.80.9",
-    "metro-config": "0.80.9",
-    "metro-runtime": "0.80.9"
+    "metro": "0.80.12",
+    "metro-resolver": "0.80.12",
+    "metro-config": "0.80.12",
+    "metro-runtime": "0.80.12"
   },
   "overrides": {
-    "metro": "0.80.9",
-    "metro-resolver": "0.80.9",
-    "metro-config": "0.80.9",
-    "metro-runtime": "0.80.9"
+    "overrides": {
+      "metro": "0.80.12",
+      "metro-resolver": "0.80.12",
+      "metro-config": "0.80.12",
+      "metro-runtime": "0.80.12"
+    }
   }
 }
